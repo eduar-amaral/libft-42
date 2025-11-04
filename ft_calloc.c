@@ -5,24 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 17:55:01 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/30 14:18:52 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/11/03 16:11:35 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:13:05 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t ct, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*dst;
+	void	*dst;
 
-	if (!ct || !size)
+	if (!nmemb || !size)
 		return (malloc(0));
-	if (ct > (SIZE_MAX / size))
+	if (nmemb > SIZE_MAX / size)
 		return (NULL);
-	dst = malloc(ct * size);
+	dst = malloc(nmemb * size);
 	if (!dst)
 		return (NULL);
-	ft_bzero(dst, ct * size);
+	ft_bzero(dst, nmemb * size);
 	return (dst);
 }

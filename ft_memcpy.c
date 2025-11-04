@@ -5,26 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/22 12:40:17 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/28 17:08:09 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/10/31 17:46:00 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:15:35 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*ptr_src;
-	unsigned char	*ptr_dest;
+	const unsigned char	*sptr;
+	unsigned char		*dptr;
 
-	if (!src && !dest)
-		return (dest);
-	ptr_dest = (unsigned char *) dest;
-	ptr_src = (unsigned char *) src;
-	while (len > 0)
-	{
-		*(ptr_dest++) = *(ptr_src++);
-		len--;
-	}
-	return (dest);
+	if (!dst && !src)
+		return (NULL);
+	sptr = (const unsigned char *) src;
+	dptr = (unsigned char *) dst;
+	while (n--)
+		*dptr++ = *sptr++;
+	return (dst);
 }

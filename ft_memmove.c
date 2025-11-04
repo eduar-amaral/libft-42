@@ -5,34 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 13:26:11 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/28 20:11:15 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/10/31 18:49:11 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:15:45 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char	*ptr_dest;
-	unsigned char	*ptr_src;
-	size_t			i;
+	const unsigned char	*sptr;
+	unsigned char		*dptr;
 
-	if (!src && !dest)
+	if (!dst && !src)
 		return (NULL);
-	ptr_dest = (unsigned char *) dest;
-	ptr_src = (unsigned char *) src;
-	i = 0;
-	if (ptr_dest > ptr_src)
-		while (len-- > 0)
-			ptr_dest[len] = ptr_src[len];
+	sptr = (const unsigned char *) src;
+	dptr = (unsigned char *) dst;
+	if (dptr > sptr && dptr < sptr + n)
+		while (n--)
+			dptr[n] = sptr[n];
 	else
-	{
-		while (i < len)
-		{
-			ptr_dest[i] = ptr_src[i];
-			i++;
-		}
-	}
-	return (dest);
+		while (n--)
+			*dptr++ = *sptr++;
+	return (dst);
 }

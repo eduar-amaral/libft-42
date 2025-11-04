@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 13:26:55 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/29 13:45:31 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/10/31 14:43:26 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:12:46 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while ((str[i] == 32) || (str[i] >= 9 && str[i] <= 13))
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32))
 		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
-		sign = -sign;
+		if (str[i] == '-')
+			sign = -sign;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')

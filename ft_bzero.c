@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 17:07:42 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/21 18:36:05 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/10/31 17:35:40 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:12:51 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
-	ft_memset(str, '\0', len);
+	ft_memset(s, '\0', n);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 18:54:46 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/29 13:47:30 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/11/03 14:20:42 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:15:29 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
+	unsigned const char	*sptr1;
+	unsigned const char	*sptr2;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	sptr1 = s1;
+	sptr2 = s2;
+	while (n--)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		if (*sptr1 != *sptr2)
+			return (*sptr1 - *sptr2);
+		sptr1++;
+		sptr2++;
 	}
 	return (0);
 }

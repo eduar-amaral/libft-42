@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 10:53:34 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/28 10:57:02 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/11/03 13:07:19 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:16:52 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	if (c < 'A' || c > 'Z')
-		return (c);
-	return (c + 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

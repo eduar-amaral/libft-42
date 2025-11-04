@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/28 11:42:50 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/28 15:21:44 by eamaral-         ###   ########.fr       */
+/*   Created: 2025/11/03 13:15:18 by eamaral-          #+#    #+#             */
+/*   Updated: 2025/11/03 21:16:03 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
-	char			cc;
-
-	cc = (char) c;
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == cc)
-			return ((char *) &s[i]);
-		i++;
+		if (*s == (char) c)
+			return ((char *) s);
+		s++;
 	}
-	if (s[i] == cc)
-		return ((char *) &s[i]);
+	if ((char) c == '\0')
+		return ((char *) s);
 	return (NULL);
 }
