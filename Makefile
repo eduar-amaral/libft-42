@@ -6,7 +6,7 @@
 #    By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 14:43:01 by eamaral-          #+#    #+#              #
-#    Updated: 2025/11/04 00:31:56 by eamaral-         ###   ########.fr        #
+#    Updated: 2025/11/04 19:58:36 by eamaral-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,17 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlcpy.c ft_toupper.c ft_tolower.c ft_strlcat.c ft_atoi.c \
 		ft_strchr.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
 		ft_strncmp.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-		ft_strtrim.c ft_split.c
+		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
+		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 		
+# Also a list of source files, but used by a bonus rule
+SRCS_BONUS = 
+
 # Automatically convert .c files to .o files for object list
 OBJS = $(patsubst %.c, %.o, $(SRCS))
+
+# Automatically convert .c files to .o files for bonus object list
+OBJS_BONUS = $(patsubst %.c, %.o, $(SRCS_BONUS))
 
 # Compiler to use
 CC = cc
@@ -68,10 +75,15 @@ $(NAME): $(OBJS)
 	@echo "$(YELLOW)Compiling:$(RESET) $(BLUE)$<$(RESET)"
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
+# Build the static library from object files with bonus included
+bonus: $(OBJS) $(OBJS_BONUS)
+	@echo "$(GREEN)Building library with bonus:$(RESET) $(BLUE)$(NAME)$(RESET)"
+	@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+
 # Remove all object files
 clean:
 	@echo "$(RED)Cleaning object files...$(RESET)"
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(OBJS_BONUS)
 
 # Remove objects files and the library
 fclean: clean
@@ -82,4 +94,4 @@ fclean: clean
 re: fclean all
 
 # Declare targets that aren't actual files
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus

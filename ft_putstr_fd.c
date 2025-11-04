@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 19:29:52 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/10/29 19:35:52 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:13:56 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 		ft_putchar_fd(*s++, fd);
 }
