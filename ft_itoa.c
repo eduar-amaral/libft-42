@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:28:11 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/04 18:23:46 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/06 20:43:47 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,12 @@ static size_t	ft_nbrlen(int n)
 	return (count);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
-	printf("%s\n", ft_itoa(-256));
+	printf("Test with positve value: %s\n", ft_itoa(42));
+	printf("Test with negative value: %s\n", ft_itoa(-42));
+	printf("Test with zero: %s\n", ft_itoa(0));
+	printf("Test with minimum int size: %s\n", ft_itoa(-2147483648));
+	printf("Test with maximum int size: %s\n", ft_itoa(2147483647));
 	return (0);
-}*/
+} */

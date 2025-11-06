@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 14:43:01 by eamaral-          #+#    #+#              #
-#    Updated: 2025/11/06 02:18:10 by eamaral-         ###   ########.fr        #
+#    Updated: 2025/11/06 15:29:41 by eamaral-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

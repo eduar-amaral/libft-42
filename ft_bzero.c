@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 17:35:40 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/05 19:12:35 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/06 20:01:46 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_bzero(void *s, size_t n)
 		testmine, testori);
 	ft_bzero(testmine + 13, 4);
 	bzero(testori + 13, 4);
-	printf("After  ft_bzero = \"%s\" | After  bzero = \"%s\"\n\n",
+	printf("After  ft_bzero = \"%s\" | After  bzero = \"%s\"\n",
 		testmine, testori);
+	return (0);
 }*/

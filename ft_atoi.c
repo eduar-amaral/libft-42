@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:43:26 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/05 21:22:12 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/06 19:42:49 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,9 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+/*int	main(void)
+{
+	printf("%d\n", ft_atoi("21474836485"));
+	printf("%d\n", atoi("21474836485"));
+	return (0);
+}*/
