@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 15:05:45 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/03 21:15:56 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/05 19:10:20 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ void	*ft_memset(void *s, int c, size_t n)
 
 /*int	main(void)
 {
-	char	test[4] = "abc";
-	
-	printf("Before ft_memset -> %s\n", test);
-	//memset(test, 'A', 4);
-	ft_memset(test, 65, 3);
-	printf("After ft_memset -> %s\n", test);
-	return (0);
+	char testmine[5] = "4321";
+	char testori[5]  = "4321";
+
+	printf("Before ft_memset = \"%s\" | Before memset = \"%s\"\n",
+		testmine, testori);
+	ft_memset(testmine, '*', 4);
+	memset(testori, '*', 4);
+	printf("After  ft_memset = \"%s\" | After  memset = \"%s\"\n\n",
+		testmine, testori);
 }*/
