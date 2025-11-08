@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:43:26 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/06 19:42:49 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/08 03:01:36 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_atoi(const char *str)
 }
 /*int	main(void)
 {
-	printf("%d\n", ft_atoi("21474836485"));
-	printf("%d\n", atoi("21474836485"));
+	printf("%d\n", ft_atoi("2147483647"));
+	printf("%d\n", atoi("2147483647"));
 	return (0);
 }*/
