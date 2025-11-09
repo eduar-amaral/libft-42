@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 18:49:11 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/06 16:01:36 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/08 14:25:54 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	char testmine[6] = "abcde";
 	char testori[6]  = "abcde";
@@ -39,4 +39,4 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	memmove(testori + 2, testori, 3);
 	printf("After  ft_memmove -> %s | After  memmove -> %s\n",
 		testmine, testori);
-}*/
+} */

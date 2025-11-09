@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:35:22 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/05 21:11:53 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:06:41 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,29 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
+
+/* char to_upper(unsigned int i, char c)
+{
+	(void)i;
+	if (c >= 'a' && c <= 'z')
+		return c - 32;
+	return c;
+	}
+
+int	main(void)
+{
+	char	*mapi;
+	char	*res;
+	
+	mapi = "Hello world, this is a test...";
+	res = ft_strmapi(mapi, to_upper);
+	if (!res)
+	{
+		ft_putendl_fd("Allocation failed...", 2);
+		return (1);
+	}
+	printf("Original str: %s\n", mapi);
+	printf("Result of mapi: %s\n", res);
+	free(res);
+	return (0);
+} */

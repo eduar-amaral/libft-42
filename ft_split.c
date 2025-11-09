@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 22:20:16 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/06 19:32:29 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/09 14:59:19 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,22 @@ static void	*ft_free_split(char **split, size_t j)
 	free(split);
 	return (NULL);
 }
+/* int main(void)
+{
+	char	**res;
+	size_t	i;
+	
+	res = ft_split("Hello world this is a test", ' ');
+	if (!res)
+	{
+		ft_putendl_fd("Allocation failed...", 2);
+		return (1);
+	}
+	while (res[i])
+	{
+		printf("Word %d: \"%s\"\n", i, res[i]);
+		free(res[i]);
+		i++;
+	}
+	return (0);
+} */

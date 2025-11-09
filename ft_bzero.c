@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 17:35:40 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/06 20:01:46 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:38:30 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	ft_memset(s, '\0', n);
 }
 
-/*int	main(void)
+/* int	main(void)
 {
 	char testmine[18] = "Null here -> 1234";
 	char testori[18]  = "Null here -> 1234";
@@ -29,4 +29,4 @@ void	ft_bzero(void *s, size_t n)
 	printf("After  ft_bzero = \"%s\" | After  bzero = \"%s\"\n",
 		testmine, testori);
 	return (0);
-}*/
+} */

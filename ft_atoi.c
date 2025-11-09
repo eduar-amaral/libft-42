@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 14:43:26 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/08 03:01:36 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/07 19:36:06 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,12 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-/*int	main(void)
+
+/* int	main(void)
 {
-	printf("%d\n", ft_atoi("2147483647"));
-	printf("%d\n", atoi("2147483647"));
+	printf("ft_atoi w/ positive: %d\n", ft_atoi("42"));
+	printf("ft_atoi w/ negative: %d\n", ft_atoi("-42"));
+	printf("atoi w/ positive: %d\n", atoi("42"));
+	printf("atoi w/ negative: %d\n", atoi("-42"));
 	return (0);
-}*/
+} */

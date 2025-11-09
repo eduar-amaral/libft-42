@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 13:28:11 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/06 20:43:47 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/07 16:49:33 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ static size_t	ft_nbrlen(int n)
 	printf("Test with zero: %s\n", ft_itoa(0));
 	printf("Test with minimum int size: %s\n", ft_itoa(-2147483648));
 	printf("Test with maximum int size: %s\n", ft_itoa(2147483647));
+	printf("Test with maximum int size: %s\n", ft_itoa(10000));
 	return (0);
 } */

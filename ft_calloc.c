@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eamaral- <eamaral-@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 16:11:35 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/06 20:11:12 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/09 17:39:07 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*dst;
 
 	if (!nmemb || !size)
-		return (malloc(1));
+		return (ft_strdup(""));
 	if (nmemb > SIZE_MAX / size)
 		return (NULL);
 	dst = malloc(nmemb * size);

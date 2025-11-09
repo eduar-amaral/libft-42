@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 02:06:48 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/08 02:53:20 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/09 15:02:24 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 }
 
-/*static void	*dupper(void *c)
+/* static void	*dupper(void *c)
 {
 	char	*src;
 	char	*dst;
@@ -91,4 +91,4 @@ int	main(void)
 	lstprinter(mapi, "NOW UPPER CASE");
 	ft_lstclear(&lst, freeza);
 	ft_lstclear(&mapi, freeza);
-}*/
+} */
