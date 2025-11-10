@@ -6,7 +6,7 @@
 /*   By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 22:20:16 by eamaral-          #+#    #+#             */
-/*   Updated: 2025/11/09 14:59:19 by eamaral-         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:48:32 by eamaral-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,17 +87,19 @@ static void	*ft_free_split(char **split, size_t j)
 	char	**res;
 	size_t	i;
 	
-	res = ft_split("Hello world this is a test", ' ');
+	res = ft_split("War. War never changes.", ' ');
 	if (!res)
 	{
 		ft_putendl_fd("Allocation failed...", 2);
 		return (1);
 	}
+	i = 0;
 	while (res[i])
 	{
-		printf("Word %d: \"%s\"\n", i, res[i]);
+		printf("Word %zu: \"%s\"\n", i, res[i]);
 		free(res[i]);
 		i++;
 	}
+	free(res);
 	return (0);
 } */

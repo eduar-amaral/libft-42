@@ -6,18 +6,22 @@
 #    By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 14:43:01 by eamaral-          #+#    #+#              #
-#    Updated: 2025/11/10 13:54:50 by eamaral-         ###   ########.fr        #
+#    Updated: 2025/11/10 17:18:56 by eamaral-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ========================
-#      <Goated start>
+#     🐐Goated start
 # ========================
 
-# Name of the output static library
+
+# The name of the legendary static library we're crafting.
 NAME = libft.a
 
-# List of source files to compile
+# Bonus mode toggle, starts off chill. Gets spicy when summoned.
+BONUS = 
+
+# The chosen ones, source files destined for greatness.
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 		ft_strlcpy.c ft_toupper.c ft_tolower.c ft_strlcat.c ft_atoi.c \
@@ -26,78 +30,96 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
-# Also a list of source files, but used by a bonus rule
+# The bonus squad, only called when the prophecy demands it.
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 			ft_lstmap.c
 
-# Automatically convert .c files to .o files for object list
+# Object transformation, turns .c into .o like alchemy.
 OBJS = $(patsubst %.c, %.o, $(SRCS))
-
-# Automatically convert .c files to .o files for bonus object list
 OBJS_BONUS = $(patsubst %.c, %.o, $(SRCS_BONUS))
 
-# Compiler to use
+# The compiler of destiny.
 CC = cc
 
-# Compiler flags:
+# Compiler flags, no warnings shall pass.
 # -Wall: enable all warnings
 # -Wextra: enable extra warning
 # -Werror: treat warnings as error
 CFLAGS = -Wall -Wextra -Werror
 
-# Cleanup command
+# Cleanup spell.
 RM = rm -f
 
 # ========================
-#        COLOR CODES
+#      🎨COLOR CODES
 # ========================
 
-#ANSI color codes
-GREEN = \033[0;32m # Sucess messages
-YELLOW = \033[1;33m # Compilation messages
-BLUE = \033[1;34m # File names
-RED = \033[0;31m # Cleanup messages
-RESET = \033[0m # Reset to default terminal color
+# ANSI magic to make the terminal pop.
+GREEN = \033[5;4;32m # Success vibes
+YELLOW = \033[1;33m # Compilation hype
+BLUE = \033[5;4;34m # File names
+RED = \033[1;31m # Cleanup rage
+RESET = \033[0m # Back to default. Boring but necessary.
 
 # ========================
-#         TARGETS
+#        🛠TARGETS
 # ========================
 
-# Default target: builds the library
+# Default target, builds the library like a boss.
 all: $(NAME)
 
-# Build the static library from object files
-$(NAME): $(OBJS)
-	@echo "$(GREEN)Building library:$(RESET) $(BLUE)$(NAME)$(RESET)"
+# The main build rule.
+# checks if BONUS=1.
+# If yes, it throws in the bonus .o files like parmesan on pasta.
+# If not, we keep it clean and classy.
+$(NAME): $(OBJS) $(if $(BONUS),$(OBJS_BONUS))
+	@echo "🚀 $(GREEN)Compiling complete!$(RESET)"
+ifeq ($(BONUS),1)
+	@echo "🔨$(GREEN)Building library with bonus:$(RESET) $(BLUE)$(NAME)$(RESET)"
+	@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+else
+	@echo "🔨$(GREEN)Building library:$(RESET) $(BLUE)$(NAME)$(RESET)"
 	@ar rcs $(NAME) $(OBJS)
+endif
+	@echo "$(GREEN)"
+	@echo "██╗     ██╗██████╗     ██████╗  ██████╗  █████╗ ████████╗"
+	@echo "██║     ██║██╔══██╗   ██╔════╝ ██╔═══██╗██╔══██╗╚══██╔══╝"
+	@echo "██║     ██║██████╔╝   ██║  ███╗██║   ██║███████║   ██║   "
+	@echo "██║     ██║██╔══██╗   ██║   ██║██║   ██║██╔══██║   ██║   "
+	@echo "███████╗██║██████╔╝   ╚██████╔╝╚██████╔ ██║  ██║   ██║   "
+	@echo "╚══════╝╚═╝╚═════╝     ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   "
+	@echo "$(RESET)"
+	@echo "\a"
 
-# Compile each .c file into a .o file
+# Compilation ritual, transforms each .c into a .o
 %.o: %.c
-	@echo "$(YELLOW)Compiling:$(RESET) $(BLUE)$<$(RESET)"
+	@echo "⚙️$(YELLOW)Compiling:$(RESET) $(BLUE)$<$(RESET)"
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
-# Witchcraft for avoid relink (i will find a better solution later)
-bonus: .bonus
+# ========================
+#     🧙‍♂️ BONUS MODE
+# ========================
 
 # Build the static library from object files with bonus included
-.bonus: $(OBJS_BONUS)
-	@echo "$(GREEN)Adding bonus object:$(RESET) $(BLUE)$(NAME)$(RESET)"
-	@ar rcs $(NAME) $(OBJS_BONUS)
-	@touch .bonus
+# BONUS=1 gets passed like a secret handshake.
+# Then the Makefile knows: "Ah, time to bring out the spicy list."
+# Also: we silence those annoying "Entering directory..." messages.
+bonus:
+	@$(MAKE) --no-print-directory BONUS=1 all
 
-# Remove all object files
+# Cleanup ritual, wipes out all object files
 clean:
-	@echo "$(RED)Cleaning object files...$(RESET)"
+	@echo "🧹$(RED)Cleaning object files...$(RESET)"
 	@$(RM) $(OBJS) $(OBJS_BONUS)
 	@$(RM) .bonus
 
-# Remove objects files and the library
+# Full cleanse that removes everything, even the sacred library.
 fclean: clean
-	@echo "$(RED)Removing library:$(RESET) $(BLUE)$(NAME)$(RESET)"
+	@echo "🧹$(RED)Removing library:$(RESET) $(BLUE)$(NAME)$(RESET)"
 	@$(RM) $(NAME)
 
-# Rebuild everything from scratch
+# Resurrection spell, nukes and rebuilds from scratch.
 re: fclean all
 
 # Declare targets that aren't actual files
