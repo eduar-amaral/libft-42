@@ -6,7 +6,7 @@
 #    By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 14:43:01 by eamaral-          #+#    #+#              #
-#    Updated: 2025/11/09 17:36:34 by eamaral-         ###   ########.fr        #
+#    Updated: 2025/11/10 13:54:50 by eamaral-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,10 +77,10 @@ $(NAME): $(OBJS)
 	@echo "$(YELLOW)Compiling:$(RESET) $(BLUE)$<$(RESET)"
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
-# Build the static library from object files with bonus included
+# Witchcraft for avoid relink (i will find a better solution later)
 bonus: .bonus
 
-# Witchcraft for avoid relink (i will find a better solution later)
+# Build the static library from object files with bonus included
 .bonus: $(OBJS_BONUS)
 	@echo "$(GREEN)Adding bonus object:$(RESET) $(BLUE)$(NAME)$(RESET)"
 	@ar rcs $(NAME) $(OBJS_BONUS)
