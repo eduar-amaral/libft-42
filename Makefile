@@ -6,7 +6,7 @@
 #    By: eamaral- <eamaral-@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/31 14:43:01 by eamaral-          #+#    #+#              #
-#    Updated: 2025/11/10 17:18:56 by eamaral-         ###   ########.fr        #
+#    Updated: 2025/11/10 19:46:14 by eamaral-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,9 @@ RM = rm -f
 # ANSI magic to make the terminal pop.
 GREEN = \033[5;4;32m # Success vibes
 YELLOW = \033[1;33m # Compilation hype
-BLUE = \033[5;4;34m # File names
-RED = \033[1;31m # Cleanup rage
+CYAN = \033[1;36m # File names
+CRAZY_YELLOW = \033[5;3;7;33m # Cleanup rage
+MAGENTA = \033[5;4;35m # Goat neon LIB
 RESET = \033[0m # Back to default. Boring but necessary.
 
 # ========================
@@ -74,15 +75,17 @@ all: $(NAME)
 # If yes, it throws in the bonus .o files like parmesan on pasta.
 # If not, we keep it clean and classy.
 $(NAME): $(OBJS) $(if $(BONUS),$(OBJS_BONUS))
-	@echo "🚀 $(GREEN)Compiling complete!$(RESET)"
+	@echo "                🚀 $(GREEN)Compiling complete!$(RESET) 🚀"
 ifeq ($(BONUS),1)
-	@echo "🔨$(GREEN)Building library with bonus:$(RESET) $(BLUE)$(NAME)$(RESET)"
+	@echo "              🔨  $(GREEN)Building library with bonus$(RESET) 🔨"
+	@echo "                  ✨🔮✨ $(CYAN)$(NAME)$(RESET) ✨🔮✨" 
 	@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 else
-	@echo "🔨$(GREEN)Building library:$(RESET) $(BLUE)$(NAME)$(RESET)"
+	@echo "                🔨  $(GREEN)Building library$(RESET) 🔨 "
+	@echo "                  ✨🔮✨ $(CYAN)$(NAME)$(RESET) ✨🔮✨"
 	@ar rcs $(NAME) $(OBJS)
 endif
-	@echo "$(GREEN)"
+	@echo "$(MAGENTA)"
 	@echo "██╗     ██╗██████╗     ██████╗  ██████╗  █████╗ ████████╗"
 	@echo "██║     ██║██╔══██╗   ██╔════╝ ██╔═══██╗██╔══██╗╚══██╔══╝"
 	@echo "██║     ██║██████╔╝   ██║  ███╗██║   ██║███████║   ██║   "
@@ -94,7 +97,7 @@ endif
 
 # Compilation ritual, transforms each .c into a .o
 %.o: %.c
-	@echo "⚙️$(YELLOW)Compiling:$(RESET) $(BLUE)$<$(RESET)"
+	@echo "             ⚙️$(YELLOW)Compiling:$(RESET) $(CYAN)$<$(RESET)"
 	@$(CC) $(CFLAGS) -I. -c $< -o $@
 
 # ========================
@@ -110,13 +113,26 @@ bonus:
 
 # Cleanup ritual, wipes out all object files
 clean:
-	@echo "🧹$(RED)Cleaning object files...$(RESET)"
+	@echo "$(CRAZY_YELLOW)                                                        "
+	@echo "            ╔══════════════════════════════╗             "
+	@echo "            ║                              ║             "
+	@echo "            ║       OBJECTS FILES          ║             "
+	@echo "            ║    HAS BEEN DESTROYED        ║             "
+	@echo "            ║                              ║             "
+	@echo "            ╚══════════════════════════════╝             "
+	@echo "$(RESET)"
 	@$(RM) $(OBJS) $(OBJS_BONUS)
-	@$(RM) .bonus
 
 # Full cleanse that removes everything, even the sacred library.
 fclean: clean
-	@echo "🧹$(RED)Removing library:$(RESET) $(BLUE)$(NAME)$(RESET)"
+	@echo "$(CRAZY_YELLOW)                                                        "
+	@echo "            ╔══════════════════════════════╗             "
+	@echo "            ║                              ║             "
+	@echo "            ║         THE LIBRARY          ║             "
+	@echo "            ║    HAS BEEN DESTROYED        ║             "
+	@echo "            ║                              ║             "
+	@echo "            ╚══════════════════════════════╝             "
+	@echo "$(RESET)"
 	@$(RM) $(NAME)
 
 # Resurrection spell, nukes and rebuilds from scratch.
